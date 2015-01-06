@@ -1,0 +1,18 @@
+
+<p>
+    <label><%= l(:add_prefix_for_subject_label) %> </label>
+    <input name="issue[subject_prefix]" type="text" />
+</p>
+<p>
+    <label><%= l(:add_suffix_for_subject_label) %></label>
+    <input name="issue[subject_suffix]" type="text" />
+</p>
+<p>
+    <label><%= l(:subject_replace_from_label) %></label>
+    <input id="subject_string_rep_from" name="issue[subject_string_rep_from]" type="text" />
+</p>
+<p>
+    <label><%= l(:subject_replace_to_lable) %></label>
+    <input id="subject_string_rep_to" name="issue[subject_string_rep_to]" type="text" />
+</p>
+<%= javascript_include_tag "bulk_edit_extension" %>

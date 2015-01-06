@@ -1,0 +1,18 @@
+
+$(document).ready(function() {
+    $("input[name='commit']").click(function() {
+        $subject_string_rep_from = $("#subject_string_rep_from").val();
+        $subject_string_rep_to = $("#subject_string_rep_to").val();
+
+        if ($subject_string_rep_from.length == 0 && $subject_string_rep_to.length > 0) {
+            alert("Subject Replace From: can't be blank!");
+            return false;
+        }
+
+        return false;
+
+    });
+
+
+
+});

@@ -1,0 +1,33 @@
+
+class BuilEditExtensionHookListener < Redmine::Hook::ViewListener
+
+    def view_issues_bulk_edit_details_bottom(context={})
+        context[:controller].send(:render_to_string, {
+            :partial => "hook/bulk_edit_extension",
+            :locals => context
+        })
+    end
+
+    def controller_issues_bulk_edit_before_save(context={})
+        params = context[:params]
+        issue_info = params[:issue]
+        subject_prefix = issue_info['subject_prefix']
+        subject_suffix = issue_info['subject_suffix']
+
+        subject_string_rep_from = issue_info['subject_string_rep_from']
+        subject_string_rep_to = issue_info['subject_string_rep_to']
+
+        if subject_string_rep_from.class == "String" and subject_string_rep_to.class == "String" and subject_string_rep_from.length > 0
+            context[:issue].subject = context[:issue].subject.sub(subject_string_rep_from,subject_string_rep_to)
+        end
+        
+        if not subject_prefix.blank?
+            context[:issue].subject = subject_prefix + context[:issue].subject
+        end
+        if not subject_suffix.blank?
+            context[:issue].subject = context[:issue].subject + subject_suffix
+        end
+
+    end
+
+end

@@ -1,0 +1,10 @@
+# English strings go here for Rails i18n
+zh:
+  add_prefix_for_subject_label: "添加主题前缀"
+  add_suffix_for_subject_label: "添加主题后缀"
+  subject_replace_from_label: "主题替换：From"
+  subject_replace_to_lable: "主题替换：To"
+  bulk_edit_extension_search_label: "搜索"
+  
+
+

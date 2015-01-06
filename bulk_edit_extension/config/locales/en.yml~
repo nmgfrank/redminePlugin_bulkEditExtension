@@ -1,0 +1,6 @@
+# English strings go here for Rails i18n
+en:
+  add_prefix_for_subject_label: "add subject prefix :"
+  add_suffix_for_subject_label: "add subject suffix :"
+  subject_replace_from_label: "Subject Replace：From"
+  subject_replace_to_lable: "主题替换：To"
